@@ -1,0 +1,134 @@
+#Tema nya adalah "WEEKEND DISCOUNT" yang dimana di restoran tersebut akan mengadakan diskon sebesar 10% pada hari Sabtu
+# dan diskon sebesar 25% pada hari minggu untuk semua menu yang ada di restoran tersebut dan tidak mendapatkan diskon 
+# pada hari biasa, yaitu pada hari senin sampai jum'at.
+def menu0():
+    print("=========================================")
+    print("Hai", (Username),",","Selamat Datang di Menu Admin")
+    print("=========================================")
+    print("==========Daftar Menu==========")
+    daftar_menu = ["1. Nasi goreng python = Rp.20000", "2. Mie goreng C++ = Rp.18000", "3. Teh flowchart = Rp.6000", "4. Susu Vscode = Rp.10000" ]
+    for i in daftar_menu:
+        print(i)
+    print()
+    print("==========Daftar Opsi==========")
+    daftar_opsi = ["1. Menambah Menu ", "2. Menghapus Menu"]
+    for m in daftar_opsi:
+        print(m)
+        print() 
+    Opsi = input (str("Pilih Opsi [ 1 / 2 ] = "))
+    if Opsi == "1":
+        print("Stok Menu:\n1. Es krim Postest  = Rp. 6000\n2. Es jeruk responsi = Rp. 5000\n3. Capcay Deadline = Rp. 15000")
+        menu_baru1 = input(str("Menu baru [ 1 / 2 / 3] = "))
+        if menu_baru1 == "1":
+            daftar_menu.append("5. Es krim Postest = Rp. 6000")
+            print("=======================")
+            print("Menu telah ditambahkan!")
+            print("=======================")
+            for l in daftar_menu:
+                print(l)
+        elif menu_baru1 == "2":
+            daftar_menu.append(str("5. Es jeruk responsi = Rp. 5000"))
+            print("=======================")
+            print("Menu telah ditambahkan!")
+            print("=======================")
+            for l in daftar_menu:
+                print(l)
+        elif menu_baru1 == "3":
+            daftar_menu.append(str("5. Capcay Deadline = Rp. 15000"))
+            print("=======================")
+            print("Menu telah ditambahkan!")
+            print("=======================")
+            for l in daftar_menu:
+                print(l)
+        else :
+            print("Stok Tidak Tersedia!")
+    elif Opsi == "2":
+        hapus = input("Menu yang ingin di hapus [ 1 / 2 / 3 / 4] = ")
+        if hapus == "1":
+            del daftar_menu[0]
+        print("=======================")
+        print("Menu telah dihapus!")
+        print("=======================")
+        for l in daftar_menu:
+            print(l)
+    else:
+        print("Opsi anda salah, mohon masukkan opsi dengan benar")
+    menu1()
+           
+def menu1():
+    print()
+    print("=========================================================")
+    print("Hai", (Username),",","Selamat Datang di Restoran \"STRESS POSTEST\"")
+    print("=========================================================")
+    print()
+    Pilihan = str(input("Apakah anda ingin memesan ? [iya/tidak]"))
+    if Pilihan == "iya":
+        print()
+        menu2()
+    elif Pilihan == "tidak":
+        print("=====Semoga Hari Anda Menyenangkan=====")
+    else :
+        print("Kata yang anda masukkan salah, mohon di isi kembali :)")
+        menu1()
+def menu2():
+    print("==========Daftar Menu==========")
+    daftar_menu = ["1. Nasi goreng python = Rp.20000", "2. Mie goreng C++ = Rp.18000", "3. Teh flowchart = Rp.6000", "4. Susu Vscode = Rp.10000" ]
+    for i in daftar_menu:
+        print(i)
+        print()
+    menu3()
+def menu3():
+    Pilihan = int(input("Silahkan Pilih Pesanan Anda [1 / 2 / 3 / 4] = "))
+    if Pilihan == 1:
+        print("Nasi goreng python = Rp.20000")
+    elif Pilihan == 2:
+        print(" Mie goreng C++ = Rp.18000")
+    elif Pilihan == 3:
+        print("Teh flowchart = Rp.6000")
+    elif Pilihan == 4:
+        print("Susu Pseudocode = Rp.10000")
+    else:
+        print("Mohon maaf, nomor yang anda masukkan salah, mohon di isi kembali :)")
+        menu3()
+    menu4()
+def menu4():
+    Keputusan = str(input("Apakah anda ingin memesan lagi ? [iya/tidak]"))
+    if Keputusan == "iya":
+        print()
+        menu3()
+    elif Keputusan == "tidak":
+        print()
+        menu5()
+    else :
+        print("Kata yang anda masukkan salah, mohon di isi kembali :)")
+        menu4()
+def menu5():
+    x = int(input("Berapa total harga makanan pelanggan ? = "))
+    y = str(input("Hari ini hari apa ? [biasa / sabtu / minggu] = "))
+    if y == "sabtu":
+        print("Total harga =", x - x * 10/100) 
+    elif y == "minggu":
+        print("Total harga =", x - x * 25/100)
+    elif y == "biasa":
+        print("Total harga =", x)
+    else:
+        print("Kata yang anda masukkan salah, mohon di isi kembali :)")
+        menu5()
+    print()
+    print("================================================================")
+    print("Terimakasih telah makan disini. Semoga nilai Postest mu tinggi:)")
+    print("================================================================")
+
+print()
+print("===== MENU LOGIN =====")
+Username = input("Masukkan nama anda = ")
+def menuA():
+    Password = input("Masukkan password anda [Admin = 057 / Pelanggan = 210] = ")
+    if  Password == "057":
+        menu0()
+    elif Password == "210":
+        menu1()
+    else :
+        print("Passwordnya salah, mohon masukkan yang benar yaa :)")
+        menuA()
+menuA()
